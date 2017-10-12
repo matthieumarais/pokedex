@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from "@angular/router";
 
 import { PokemonApiService } from '../services/pokemon-api.service';
 
@@ -10,13 +11,34 @@ import { PokemonApiService } from '../services/pokemon-api.service';
 export class HomeComponent implements OnInit {
   title = "home";
   pokemons;
+  linksArray: number[];
+  currentPage: number;
 
-  constructor(private pokemonApi: PokemonApiService) { }
-
-  ngOnInit(): void {
-    this.pokemons = this.pokemonApi.getAllPokemons();
+  constructor(private pokemonApi: PokemonApiService, private route: ActivatedRoute) {
 
   }
 
+  ngOnInit(): void {
+    this.route.params.subscribe(params => {
+      console.log(params);
+      this.currentPage = params.n;
+      this.pokemons = this.pokemonApi.getAllPokemons(params.n);
+      this.pokemons.subscribe((data) => {
+        this.createLinksArray(data.count);
+      })
+    });
+  };
+
+  createLinksArray(numberOfPokemons: number) {
+
+    let nbPage = Math.ceil(numberOfPokemons / 20);
+    let linksArray = new Array(nbPage);
+    let i = 0;
+    while (i < nbPage) {
+      linksArray[i] = i + 1;
+      i++;
+    }
+    this.linksArray = linksArray;
+  }
+
 }
-// 'http://pokeapi.co/api/v2/pokemon/358'

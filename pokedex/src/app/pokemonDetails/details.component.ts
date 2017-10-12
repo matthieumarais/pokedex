@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
-import { RouterModule, Routes, Router } from '@angular/router';
+import { ActivatedRoute } from "@angular/router";
+import { RouterModule, Routes } from '@angular/router';
+import 'rxjs/Rx';
 
 
 import { PokemonApiService } from '../services/pokemon-api.service';
@@ -12,13 +13,17 @@ import { PokemonApiService } from '../services/pokemon-api.service';
   styleUrls: ['./details.component.css']
 })
 export class DetailsComponent implements OnInit {
+  pokemonDetail;
 
-  constructor(private route: ActivatedRoute, private pokemonApi: PokemonApiService, private router: Router) { }
+  constructor(private route: ActivatedRoute, private pokemonApi: PokemonApiService) { }
 
   ngOnInit() {
-    //this.router.navigate(['pokemon'])
-   // console.log(this.pokemons)
-    this.route.params.subscribe( params => console.log(params));
+
+    this.route.params.subscribe(params => {
+      console.log(params.name);
+      this.pokemonDetail = this.pokemonApi.getDetailPokemon(params.name).share();
+    });
+
   }
 
 }

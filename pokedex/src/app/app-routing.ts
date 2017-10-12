@@ -7,16 +7,12 @@ import { DetailsComponent } from './pokemonDetails/details.component';
 export const appRoutes: Routes = [
     {
         path: '',
-        redirectTo: '/home',
+        redirectTo: '/pokemons/page/1',
         pathMatch: "full"
     },
     {
-        path: 'home',
+        path: 'pokemons/page/:n',
         component: HomeComponent
-    },
-    {
-        path: 'pokemon',
-        component: DetailsComponent
     },
     {
         path: 'pokemon/:name',
