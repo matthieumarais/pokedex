@@ -8,6 +8,7 @@ h1 {
     padding: 50px 0 100px 0;
     font-weight: bold;
     color: black;
+    font-family: "pokemonFont";
 }
 
 a {
@@ -50,4 +51,12 @@ a.disabled {
     color: #2B73B9;
     pointer-events: none;
     cursor: default;
+}
+
+.search {
+    display: inline-block;
+    width: 100%;
+    padding: 10px;
+    border: solid 2px #2B73B9;
+    margin-top: 60px;
 }
