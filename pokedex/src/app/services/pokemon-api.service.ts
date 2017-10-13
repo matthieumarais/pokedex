@@ -14,7 +14,5 @@ export class PokemonApiService {
   getDetailPokemon(name: string){
     return this.http.get('http://pokeapi.salestock.net/api/v2/pokemon/'+ name);
   }
- // getAllPokemons01() {
-   // return this.http.get('https://pokeapi.co/api/v2/pokemon/?offset=20');
- // }
+ 
 }

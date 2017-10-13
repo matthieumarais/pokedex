@@ -1,3 +1,5 @@
+<app-header></app-header>
+
 <div class="container">
     <h2>
         details du Pokemon !
@@ -10,7 +12,7 @@
     </div>
     <p>Poid : {{(pokemonDetail | async)?.weight}}</p>
     <div *ngFor="let ability of (pokemonDetail | async)?.abilities">
-        Ability : {{ability.ability.name}}
+        <p> Ability : {{ability.ability.name}}</p>
     </div>
 
 

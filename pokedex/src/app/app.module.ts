@@ -9,12 +9,16 @@ import { PokemonApiService } from './services/pokemon-api.service'
 import { AppComponent } from './app.component';
 import { DetailsComponent } from './pokemonDetails/details.component';
 import { HomeComponent } from './home/home.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DetailsComponent,
-    HomeComponent
+    HomeComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

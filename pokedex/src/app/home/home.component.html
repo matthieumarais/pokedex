@@ -1,13 +1,15 @@
-<h1>
-    Pokedex pour les GeeK
-</h1>
-<div class="container">
-    <div class="col-md-3" *ngFor="let pokemon of (pokemons | async)?.results">
-        <a [routerLink]="['/pokemon', pokemon.name]">{{pokemon.name}}</a>
-    </div>
-    <!-- <div class="col-md-3" *ngFor="let pokemon of (pokemons01 | async)?.results">
-        {{pokemon.name}}
-    </div> -->
-    <a *ngFor="let link of linksArray" [ngClass]="{'disabled': link == currentPage}" [routerLink]="['/pokemons/page', link]">{{link}}</a>
+<app-header></app-header>
+<div class="container-fluid bgHome">
 
+    <h1>
+        Pokedex pour les GeeK
+    </h1>
+    <div class="container">
+        <div class="col-md-3 pokemons" *ngFor="let pokemon of (pokemons | async)?.results">
+            <a [routerLink]="['/pokemon', pokemon.name]">{{pokemon.name}}</a>
+        </div>
+        <div class="col-xs-12 list">
+            <a *ngFor="let link of linksArray" [ngClass]="{'disabled': link == currentPage}" [routerLink]="['/pokemons/page', link]">{{link}}</a>
+        </div>
+    </div>
 </div>
