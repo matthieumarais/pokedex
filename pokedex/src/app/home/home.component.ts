@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 
 import { PokemonApiService } from '../services/pokemon-api.service';
 
@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
   linksArray: number[];
   currentPage: number;
 
-  constructor(private pokemonApi: PokemonApiService, private route: ActivatedRoute) {
+  constructor(private pokemonApi: PokemonApiService, private route: ActivatedRoute, private router: Router) {
 
   }
 
@@ -39,6 +39,9 @@ export class HomeComponent implements OnInit {
       i++;
     }
     this.linksArray = linksArray;
+  }
+  envoi(input: string){
+    this.router.navigate(['/pokemon', input]);
   }
 
 }

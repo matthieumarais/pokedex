@@ -4,11 +4,11 @@
             details du Pokemon !
         </h2>
         <div class="col-md-offset-2 col-md-4 name">
-            <p>Name : {{(pokemonDetail | async)?.name}}</p>
-            <p>Weight : {{(pokemonDetail | async)?.weight}}</p>
-            <p>Height : {{(pokemonDetail | async)?.height}}</p>
+            <p>Nom : {{(pokemonDetail | async)?.name}}</p>
+            <p>Poids : {{(pokemonDetail | async)?.weight}} lb</p>
+            <p>Taille : {{(pokemonDetail | async)?.height}} inch</p>
             <div *ngFor="let ability of (pokemonDetail | async)?.abilities">
-                <p> Ability : {{ability.ability.name}}</p>
+                <p> Capacité : {{ability.ability.name}}</p>
             </div>
         </div>
         <div class="col-md-4 imgPokemon">

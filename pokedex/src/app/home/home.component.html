@@ -2,15 +2,14 @@
 <div class="container-fluid bgHome">
 
     <h1>
-        Pokedex pour les GeeK
+        Pokedex
     </h1>
     <div class="container">
         <div class="col-md-3 pokemons" *ngFor="let pokemon of (pokemons | async)?.results">
             <a [routerLink]="['/pokemon', pokemon.name]">{{pokemon.name}}</a>
         </div>
         <div class="text-center col-md-offset-4 col-md-4">
-            <input type="text" class="search" name="search" id="search" placeholder="recherche" (keyup.enter)="envoi($event.target.value)" ngModel="" />
-
+            <input type="text" class="search" name="search" id="search" placeholder="recherche" (keyup.enter)="envoi($event.target.value)" ngModel="" /> {{input}}
         </div>
         <div class="col-xs-12 list">
             <a *ngFor="let link of linksArray" [ngClass]="{'disabled': link == currentPage}" [routerLink]="['/pokemons/page', link]">{{link}}</a>
