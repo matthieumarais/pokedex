@@ -1,22 +1,23 @@
 <app-header></app-header>
-
-<div class="container">
-    <h2>
-        details du Pokemon !
-    </h2>
-    <div class="col-md-6 name">
-        <p>Nom : {{(pokemonDetail | async)?.name}}</p>
+<div class="container-fluid bgDetails">
+    <div class="container">
+        <h2>
+            details du Pokemon !
+        </h2>
+        <div class="col-md-offset-2 col-md-4 name">
+            <p>Name : {{(pokemonDetail | async)?.name}}</p>
+            <p>Weight : {{(pokemonDetail | async)?.weight}}</p>
+            <p>Height : {{(pokemonDetail | async)?.height}}</p>
+            <div *ngFor="let ability of (pokemonDetail | async)?.abilities">
+                <p> Ability : {{ability.ability.name}}</p>
+            </div>
+        </div>
+        <div class="col-md-4 imgPokemon">
+            <img [src]="(pokemonDetail | async)?.sprites.front_default">
+        </div>
     </div>
-    <div class="col-md-6">
-        <img [src]="(pokemonDetail | async)?.sprites.front_default">
-    </div>
-    <p>Poid : {{(pokemonDetail | async)?.weight}}</p>
-    <div *ngFor="let ability of (pokemonDetail | async)?.abilities">
-        <p> Ability : {{ability.ability.name}}</p>
+    <div class="container text-center">
+        <a class="btn btn-primary" [routerLink]="['/']">retour</a>
     </div>
 
-
-
-
-    <a class="btn btn-primary" [routerLink]="['/']">retour</a>
 </div>

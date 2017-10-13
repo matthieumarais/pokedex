@@ -1,17 +1,31 @@
+h2 {
+    padding: 260px 0 100px 0;
+    ;
+    text-align: center;
+}
+
+.bgDetails {
+    background: url("../../assets/tetris.svg") no-repeat 0 0;
+    background-size: cover;
+    height: 100vh;
+}
+
 img {
-    width: 140px;
+    width: 380px;
     text-align: center;
 }
 
 .btn {
     margin-top: 50px;
+    font-size: 25px;
 }
 
 p {
-    font-size: 20px;
+    font-size: 30px;
 }
 
 .name {
     padding-top: 60px;
-    font-size: 35px;
+    font-size: 45px;
+    text-align: center;
 }
