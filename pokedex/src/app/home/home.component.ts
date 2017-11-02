@@ -11,6 +11,7 @@ import { PokemonApiService } from '../services/pokemon-api.service';
 export class HomeComponent implements OnInit {
   title = "home";
   pokemons;
+  typeOfPokemons;
   linksArray: number[];
   currentPage: number;
 
@@ -20,7 +21,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
-      console.log(params);
+      this.typeOfPokemons = this.pokemonApi.getTypeOfPokemons(params.name);
       this.currentPage = params.n;
       this.pokemons = this.pokemonApi.getAllPokemons(params.n);
       this.pokemons.subscribe((data) => {
@@ -40,7 +41,7 @@ export class HomeComponent implements OnInit {
     }
     this.linksArray = linksArray;
   }
-  envoi(input: string){
+  envoi(input: string) {
     this.router.navigate(['/pokemon', input]);
   }
 

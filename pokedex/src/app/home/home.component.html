@@ -1,10 +1,17 @@
 <app-header></app-header>
 <div class="container-fluid bgHome">
-
     <h1>
         Pokedex
     </h1>
     <div class="container">
+        <h2>Type Of Pokemons</h2>
+        <div class="col-md-3 typeOfPokemons" *ngFor="let type of (typeOfPokemons | async)?.results">
+            <p>{{type.name}}</p>
+        </div>
+    </div>
+    <div class="container">
+        <h2>List Of Pokemons</h2>
+
         <div class="col-md-3 pokemons" *ngFor="let pokemon of (pokemons | async)?.results">
             <a [routerLink]="['/pokemon', pokemon.name]">{{pokemon.name}}</a>
         </div>

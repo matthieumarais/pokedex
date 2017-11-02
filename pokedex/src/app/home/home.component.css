@@ -1,6 +1,5 @@
 .bgHome {
-    background: url("../../assets/bgHome.jpg") no-repeat 0 0;
-    height: 100vh;
+    background: url("../../assets/bgHome.jpg") no-repeat fixed center;
 }
 
 h1 {
@@ -27,6 +26,24 @@ a {
 .list a:hover {
     text-decoration: none;
     color: #2B73B9;
+    transition: all ease 0.3s;
+}
+
+.typeOfPokemons p {
+    color: #2B73B9;
+    font-size: 20px;
+    padding: 10px;
+    background-color: #FFCB05;
+    display: block;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.typeOfPokemons p:hover {
+    color: #FFCB05;
+    background-color: #2b73b9;
+    text-decoration: none;
     transition: all ease 0.3s;
 }
 
