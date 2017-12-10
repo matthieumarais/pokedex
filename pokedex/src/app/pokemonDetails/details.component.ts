@@ -22,6 +22,7 @@ export class DetailsComponent implements OnInit {
     this.route.params.subscribe(params => {
       console.log(params.name);
       this.pokemonDetail = this.pokemonApi.getDetailPokemon(params.name).share();
+      console.log(this.pokemonDetail)
     });
 
   }

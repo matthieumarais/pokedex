@@ -11,8 +11,12 @@ export class PokemonApiService {
     return this.http.get('https://pokeapi.co/api/v2/pokemon' + "?offset=" + ((pageNumber - 1) * 20));
   }
 
-  getTypeOfPokemons(type: string){
-    return this.http.get('https://pokeapi.co/api/v2/type' + name);
+  getAllTypesOfPokemons(type: string){
+    return this.http.get('https://pokeapi.co/api/v2/type/');
+  }
+
+  getTypeOfPokemons(name: string){
+    return this.http.get('https://pokeapi.co/api/v2/type/' + name);
   }
 
   getDetailPokemon(name: string){

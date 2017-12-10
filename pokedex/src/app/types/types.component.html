@@ -1,0 +1,12 @@
+<!--pre>{{(pokemonTypes | async)?.pokemon | json}}</pre-->
+<div class="container-fluid bgTypes">
+    <div class="container">
+        <h1>Type of {{(pokemonTypes | async)?.name}}</h1>
+        <div class="col-md-4 typeOfPokemons" *ngFor="let pokemon of (pokemonTypes | async)?.pokemon">
+            <a [routerLink]="['/pokemon', pokemon.pokemon.name]">{{pokemon.pokemon.name}}</a>
+        </div>
+    </div>
+    <div class="container text-center">
+        <a class="btn btn-primary" [routerLink]="['/']">retour</a>
+    </div>
+</div>

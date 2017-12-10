@@ -1,0 +1,35 @@
+.bgTypes {
+    background: url("../../assets/pokeball.png") no-repeat fixed center;
+    width: 100%;
+}
+
+h1 {
+    color: #fff;
+    font-weight: bold;
+    padding: 50px 0;
+}
+
+.typeOfPokemons a {
+    color: #fff;
+    font-size: 20px;
+    padding: 10px;
+    background-color: rgba(117, 217, 216, 0.5);
+    display: block;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.typeOfPokemons a:hover {
+    color: #fff;
+    background-color: rgb(0, 133, 121);
+    font-weight: bold;
+    text-decoration: none;
+    transition: all ease 0.3s;
+}
+
+.btn {
+    font-size: 20px;
+    margin: 50px;
+}

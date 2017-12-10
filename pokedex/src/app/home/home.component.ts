@@ -21,7 +21,8 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
-      this.typeOfPokemons = this.pokemonApi.getTypeOfPokemons(params.name);
+      this.typeOfPokemons = this.pokemonApi.getAllTypesOfPokemons(params.type);
+      console.log(this.typeOfPokemons);
       this.currentPage = params.n;
       this.pokemons = this.pokemonApi.getAllPokemons(params.n);
       this.pokemons.subscribe((data) => {

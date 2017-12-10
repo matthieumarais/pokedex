@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { DetailsComponent } from './pokemonDetails/details.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
+import { TypesComponent } from './types/types.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { HeaderComponent } from './header/header.component';
     DetailsComponent,
     HomeComponent,
     HeaderComponent,
+    TypesComponent,
   ],
   imports: [
     BrowserModule,

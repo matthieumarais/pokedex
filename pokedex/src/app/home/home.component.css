@@ -29,7 +29,7 @@ a {
     transition: all ease 0.3s;
 }
 
-.typeOfPokemons p {
+.typeOfPokemons a {
     color: #2B73B9;
     font-size: 20px;
     padding: 10px;
@@ -40,7 +40,7 @@ a {
     font-weight: bold;
 }
 
-.typeOfPokemons p:hover {
+.typeOfPokemons a:hover {
     color: #FFCB05;
     background-color: #2b73b9;
     text-decoration: none;

@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component'
 import { DetailsComponent } from './pokemonDetails/details.component';
+import { TypesComponent } from'./types/types.component';
 
 export const appRoutes: Routes = [
     {
@@ -17,5 +18,8 @@ export const appRoutes: Routes = [
     {
         path: 'pokemon/:name',
         component: DetailsComponent
+    },{
+        path: 'type/:name',
+        component: TypesComponent
     },
 ];
